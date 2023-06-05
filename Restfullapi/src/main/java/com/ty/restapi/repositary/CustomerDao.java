@@ -1,6 +1,7 @@
 package com.ty.restapi.repositary;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,6 +23,10 @@ public class CustomerDao {
 	}
 	public List<Customer> findallcustomers(){
 		return customerRepository.findAll();
+	}
+	public Customer getbyid(Integer id) {
+		
+		return  customerRepository.findById(id).orElse(null);
 	}
 
 }

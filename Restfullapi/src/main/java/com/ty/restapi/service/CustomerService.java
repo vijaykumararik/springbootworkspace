@@ -32,6 +32,14 @@ public class CustomerService {
 		responceStucture.setHttpStatus(HttpStatus.FOUND);
 		return responceStucture;
 	}
+
+	public ResponceStucture<?> getbyid(Integer id) {
+		Customer customer=customerDao.getbyid(id);
+		ResponceStucture<Customer> responceStucture=new ResponceStucture<>();
+		responceStucture.setData(customer);
+		responceStucture.setHttpStatus(HttpStatus.FOUND);
+		return responceStucture;
+	}
 	
 	
 	

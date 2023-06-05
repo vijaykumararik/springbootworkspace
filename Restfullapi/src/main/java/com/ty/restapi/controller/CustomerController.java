@@ -33,7 +33,11 @@ public class CustomerController {
 		return new ResponseEntity<ResponceStucture<?>>(responceStucture,responceStucture.getHttpStatus());
 	}
 	
-	
+	@GetMapping(path = "/getbyid")
+	ResponseEntity<?> getbyid(@RequestParam Integer id){
+		ResponceStucture<?> responceStucture=customerService.getbyid(id);
+		return new ResponseEntity<>(responceStucture,responceStucture.getHttpStatus());
+	}
 	
 	
 	
