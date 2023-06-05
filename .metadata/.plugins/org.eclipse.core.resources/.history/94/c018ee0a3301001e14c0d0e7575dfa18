@@ -1,0 +1,20 @@
+package com.ty.restapi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ty.restapi.dto.Customer;
+import com.ty.restapi.repositary.CustomerDao;
+import com.ty.restapi.repositary.Customerdao;
+import com.ty.restapi.response.ResponceStucture;
+
+@Service
+public class CustomerService {
+ 
+	@Autowired CustomerDao customerDao;
+
+	public ResponceStucture<?> customerpersist(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

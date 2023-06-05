@@ -1,0 +1,33 @@
+package com.example.demo.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.ResourceisNotFoundException;
+import com.example.demo.madule.Employee;
+import com.example.demo.repo.Emprepo;
+import com.example.demo.service.EmpService;
+@Service
+public class EmpServiceimpl implements EmpService {
+ 
+	@Autowired
+	Emprepo repo;
+	@Override
+	public Employee addemployee(Employee e) {
+		
+		return repo.save(e);
+	}
+	@Override
+	public List<Employee> getEmployees() {
+		
+		return repo.findAll();
+	}
+	@Override
+	public Employee getbyid(Integer id) {
+		
+		return repo.findById(id).orElseThrow(()-> new ResourceisNotFoundException());
+	}
+
+}

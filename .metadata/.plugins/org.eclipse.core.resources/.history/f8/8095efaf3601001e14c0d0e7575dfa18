@@ -1,0 +1,4 @@
+#here we write configration
+#jpa configration
+#server configration
+server.port=8090

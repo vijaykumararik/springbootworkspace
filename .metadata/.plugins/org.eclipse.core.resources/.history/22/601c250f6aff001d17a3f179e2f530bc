@@ -1,0 +1,7 @@
+package com.example.demo.service;
+
+import com.example.demo.madule.Employee;
+
+public interface EmpService {
+ Employee addemployee(Employee e);
+}

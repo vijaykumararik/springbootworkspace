@@ -1,0 +1,15 @@
+package com.ty.restapi.repositary;
+
+import org.springframework.stereotype.Repository;
+
+import com.ty.restapi.dto.Customer;
+
+@Repository
+public class CustomerDao {
+
+	public Customer customerpersist(Customer customer) {
+		
+		return null;
+	}
+
+}
