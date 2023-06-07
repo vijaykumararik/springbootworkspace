@@ -39,6 +39,12 @@ public class CustomerController {
 		return new ResponseEntity<>(responceStucture,responceStucture.getHttpStatus());
 	}
 	
+	@DeleteMapping(path = "/deletecustomer/{id}")
+	ResponseEntity<?> deletecustomer (@PathVariable Integer id){
+		ResponceStucture<?> responceStucture=customerService.deletecustomer(id);
+		return new ResponseEntity<>(responceStucture,responceStucture.getHttpStatus());
+	}
+	
 	
 	
 	
