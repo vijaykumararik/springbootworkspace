@@ -1,6 +1,7 @@
 package com.ty.restapi.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,12 +36,22 @@ public class CustomerService {
 
 	public ResponceStucture<?> getbyid(Integer id) {
 		Customer customer=customerDao.getbyid(id);
+
 		ResponceStucture<Customer> responceStucture=new ResponceStucture<>();
 		responceStucture.setData(customer);
 		responceStucture.setHttpStatus(HttpStatus.FOUND);
 		return responceStucture;
+		
 	}
+
 	
+	public ResponceStucture<?>deletecustomer(Integer id){
+		Customer customer=customerDao.delete(id);
+		ResponceStucture<Customer> responceStucture=new ResponceStucture<>();
+		responceStucture.setData(customer);
+		responceStucture.setHttpStatus(HttpStatus.OK);
+		return responceStucture;
+	}
 	
 	
 	
